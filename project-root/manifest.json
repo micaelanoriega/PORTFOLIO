@@ -1,0 +1,20 @@
+{
+  "name": "MIKNOR",
+  "short_name": "MIKNOR",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#6b1e17",
+  "icons": [
+    {
+      "src": "assets/icons/favicons/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/favicons/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

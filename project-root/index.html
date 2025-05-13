@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIKNOR</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link
+      rel="icon"
+      href="assets/icons/favicons/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <!-- Botón MENU fijo (flecha visible siempre a la derecha) -->
+    <div class="menu-flecha" id="botonMenu">MENU</div>
+
+    <!-- Menú central desplegable -->
+    <div class="menu-central" id="menuCentral">
+      <nav>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#trabajos">Mis trabajos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+
+    <!-- Portada principal -->
+    <header class="hero">
+      <div class="vertical-left">
+        <span class="side-text">PORTFOLIO</span>
+      </div>
+
+      <div class="hero-center">
+        <h1 class="logo">MIKNOR</h1>
+      </div>
+
+      <div class="vertical-left bottom">
+        <span class="side-text">STUDENT</span>
+      </div>
+    </header>
+
+    <main>
+      <!-- Esto va fuera del section, justo después del header -->
+      <div class="sobre-mi-lateral" id="sobreLateral">SOBRE MÍ</div>
+
+      <!-- Sección sobre mí -->
+      <section id="sobre-mi">
+        <h2>Hola, soy Micaela Noriega</h2>
+        <p>
+          Soy estudiante de diseño gráfico y me apasiona la creación de
+          experiencias visuales únicas. Me encanta explorar nuevas ideas y
+          conceptos, y siempre estoy buscando formas de mejorar mis habilidades.
+        </p>
+      </section>
+
+      <section id="trabajos">
+        <h2>Mis trabajos</h2>
+        <div class="galeria">
+          <div class="polaroid">
+            <div class="polaroid-img">
+              <img src="assets/images/trabajo1.jpg" alt="Trabajo 1" />
+            </div>
+            <p>AUTENTICA</p>
+          </div>
+          <div class="polaroid">
+            <div class="polaroid-img">
+              <img src="assets/images/trabajo2.jpg" alt="Trabajo 2" />
+            </div>
+            <p>Trabajo 2</p>
+          </div>
+          <div class="polaroid">
+            <div class="polaroid-img">
+              <img src="assets/images/trabajo3.jpg" alt="Trabajo 3" />
+            </div>
+            <p>Trabajo 3</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <form>
+          <input type="text" placeholder="Nombre" required />
+          <input type="email" placeholder="Correo electrónico" required />
+          <textarea rows="4" placeholder="Mensaje" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 MIKNOR. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      // ——— EXPANSIÓN DE TRABAJO (polaroid) ———
+      const trabajos = {
+        trabajo1: {
+          img: "assets/images/trabajo1.jpg",
+          titulo: "AUTENTICA",
+          texto:
+            "Descripción detallada del proyecto Autentica. Puedes escribir aquí lo que hiciste, herramientas, concepto, etc.",
+        },
+        // Puedes agregar más como trabajo2, trabajo3, etc.
+      };
+
+      function expandirTrabajo(id) {
+        const data = trabajos[id];
+        if (!data) return;
+
+        document.getElementById("exp-img").src = data.img;
+        document.getElementById("exp-titulo").textContent = data.titulo;
+        document.getElementById("exp-texto").textContent = data.texto;
+
+        document.getElementById("expansion-container").classList.add("activo");
+        document.body.style.overflow = "hidden";
+      }
+
+      function cerrarTrabajo() {
+        document
+          .getElementById("expansion-container")
+          .classList.remove("activo");
+        document.body.style.overflow = "";
+      }
+
+      // ——— MENÚ CENTRAL DESLIZABLE ———
+
+      const botonMenu = document.getElementById("botonMenu");
+      const menuCentral = document.getElementById("menuCentral");
+
+      function toggleMenu() {
+        menuCentral.classList.toggle("activo");
+      }
+
+      botonMenu.addEventListener("click", (e) => {
+        e.stopPropagation(); // evita que se cierre inmediatamente
+        toggleMenu();
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          menuCentral.classList.contains("activo") &&
+          !menuCentral.contains(e.target) &&
+          !botonMenu.contains(e.target)
+        ) {
+          menuCentral.classList.remove("activo");
+        }
+      });
+
+      // Cierra el menú cuando se hace clic en cualquier enlace del menú
+      menuCentral.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuCentral.classList.remove("activo");
+        });
+      });
+
+      const sobreMiSection = document.getElementById("sobre-mi");
+      const sobreLateral = document.getElementById("sobreLateral");
+
+      window.addEventListener("scroll", () => {
+        const rect = sobreMiSection.getBoundingClientRect();
+        const inView =
+          rect.top <= window.innerHeight * 0.5 &&
+          rect.bottom >= window.innerHeight * 0.3;
+
+        sobreLateral.classList.toggle("visible", inView);
+      });
+    </script>
+  </body>
+</html>
