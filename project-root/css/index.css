@@ -50,7 +50,7 @@ header {
 /* Logo central */
 .hero-center .logo {
   font-family: Impact, sans-serif;
-  font-size: 8rem;
+  font-size: 10rem;
   color: white;
   text-align: left;
   animation: colorChange 5s infinite;
@@ -130,19 +130,23 @@ section {
   text-align: center;
   transition: transform 0.3s ease;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .polaroid:hover {
   transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #732828;
+  color: white;
 }
 
 /* NUEVO: contenedor cuadrado blanco */
-.polaroid-img {
+.polaroid img {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background-color: white;
-  overflow: hidden;
-  border-radius: 4px;
+  object-fit: cover;
+  border-radius: 2px;
 }
 
 .polaroid-img img {
@@ -227,15 +231,15 @@ section {
 }
 .sobre-mi-lateral {
   position: fixed;
-  top: 25%;
+  top: 15%;
   left: 0;
   transform: translateY(-50%);
   rotate: 180deg;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  color: white;
+  color: #732828;
   font-family: "Inter", sans-serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -246,4 +250,145 @@ section {
 
 .sobre-mi-lateral.visible {
   opacity: 0.8;
+}
+
+.sobre-mi-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.sobre-foto img {
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+.sobre-texto {
+  max-width: 500px;
+  color: white;
+  text-align: left;
+}
+
+.sobre-texto h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.sobre-texto p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .sobre-mi-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-texto {
+    text-align: center;
+  }
+}
+.trabajos-lateral {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "inter", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #732828;
+  z-index: 20;
+  padding: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.trabajos-lateral.visible {
+  opacity: 0.8;
+}
+
+.contacto-lateral {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Anton", sans-serif;
+  font-size: 2.5rem;
+  color: white;
+  z-index: 20;
+  padding: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.contacto-lateral.visible {
+  opacity: 0.8;
+}
+
+/* Esto es para la pagina de autentica*/
+
+.trabajo-lateral {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Anton", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  padding-left: 15px;
+  z-index: 10;
+}
+
+.trabajo-detalle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 40px;
+  min-height: 100vh;
+}
+
+.trabajo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1100px;
+  color: white;
+}
+
+.trabajo-imagen img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.trabajo-descripcion h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.trabajo-descripcion p {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  font-size: 1rem;
 }

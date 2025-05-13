@@ -45,41 +45,62 @@
     <main>
       <!-- Esto va fuera del section, justo después del header -->
       <div class="sobre-mi-lateral" id="sobreLateral">SOBRE MÍ</div>
-
-      <!-- Sección sobre mí -->
-      <section id="sobre-mi">
-        <h2>Hola, soy Micaela Noriega</h2>
-        <p>
-          Soy estudiante de diseño gráfico y me apasiona la creación de
-          experiencias visuales únicas. Me encanta explorar nuevas ideas y
-          conceptos, y siempre estoy buscando formas de mejorar mis habilidades.
-        </p>
-      </section>
-
-      <section id="trabajos">
-        <h2>Mis trabajos</h2>
-        <div class="galeria">
-          <div class="polaroid">
-            <div class="polaroid-img">
-              <img src="assets/images/trabajo1.jpg" alt="Trabajo 1" />
-            </div>
-            <p>AUTENTICA</p>
-          </div>
-          <div class="polaroid">
-            <div class="polaroid-img">
-              <img src="assets/images/trabajo2.jpg" alt="Trabajo 2" />
-            </div>
-            <p>Trabajo 2</p>
-          </div>
-          <div class="polaroid">
-            <div class="polaroid-img">
-              <img src="assets/images/trabajo3.jpg" alt="Trabajo 3" />
-            </div>
-            <p>Trabajo 3</p>
-          </div>
+      <section id="sobre-mi" class="sobre-mi-layout">
+        <div class="sobre-foto">
+          <img src="assets/images/sobremi.jpg" alt="sobre-mi" />
+        </div>
+        <div class="sobre-texto">
+          <h2>Micaela Noriega</h2>
+          <p>
+            Hola, soy Miki. Diseñadora gráfica apasionada por lo visual, lo
+            simbólico y lo emocional. Me inspiran los detalles que conectan con
+            las personas y comunican más allá de lo obvio.
+          </p>
         </div>
       </section>
 
+      <div class="trabajos-lateral" id="trabajosLateral">MIS TRABAJOS</div>
+
+      <section id="trabajos">
+        <div class="galeria">
+          <!-- Trabajo 1 (con link) -->
+          <a href="autentica.html" class="polaroid">
+            <img src="assets/images/trabajo1.jpg" alt="Trabajo 1" />
+            <p><strong>AUTENTICA</strong></p>
+          </a>
+
+          <!-- Trabajo 2 -->
+          <a href="trabajo2.html" class="polaroid">
+            <img src="assets/images/trabajo2.jpg" alt="Trabajo 2" />
+            <p><strong>FANZINE</strong></p>
+          </a>
+
+          <!-- Trabajo 3 -->
+          <a href="trabajo3.html" class="polaroid">
+            <img src="assets/images/trabajo3.jpg" alt="Trabajo 3" />
+            <p><strong>MENOS ES NADA</strong></p>
+          </a>
+          <!-- Trabajo 4 -->
+          <a href="trabajo4.html" class="polaroid">
+            <img src="assets/images/trabajo4.jpg" alt="Trabajo 4" />
+            <p><strong>MENOS ES NADA</strong></p>
+          </a>
+
+          <!-- Trabajo 5 -->
+          <a href="trabajo5.html" class="polaroid">
+            <img src="assets/images/trabajo5.jpg" alt="Trabajo 5" />
+            <p><strong>MENOS ES NADA</strong></p>
+          </a>
+
+          <!-- Trabajo 6 -->
+          <a href="trabajo6.html" class="polaroid">
+            <img src="assets/images/trabajo6.jpg" alt="Trabajo 6" />
+            <p><strong>MENOS ES NADA</strong></p>
+          </a>
+        </div>
+      </section>
+
+      <div class="contacto-lateral" id="contactoLateral">CONTACTO</div>
       <section id="contacto">
         <h2>Contacto</h2>
         <form>
@@ -92,7 +113,10 @@
     </main>
 
     <footer>
-      <p>© 2025 MIKNOR. Todos los derechos reservados.</p>
+      <p>
+        Portfolio mik © 2025 by Micaela Noriega is licensed under CC BY-NC-ND
+        4.0
+      </p>
     </footer>
 
     <script>
@@ -167,6 +191,28 @@
           rect.bottom >= window.innerHeight * 0.3;
 
         sobreLateral.classList.toggle("visible", inView);
+      });
+      const trabajosLateral = document.getElementById("trabajosLateral");
+      const trabajosSection = document.getElementById("trabajos");
+
+      window.addEventListener("scroll", () => {
+        const rect = trabajosSection.getBoundingClientRect();
+        const inView =
+          rect.top <= window.innerHeight / 2 &&
+          rect.bottom >= window.innerHeight / 2;
+
+        trabajosLateral.classList.toggle("visible", inView);
+      });
+      const contactoLateral = document.getElementById("contactoLateral");
+      const contactoSection = document.getElementById("contacto");
+
+      window.addEventListener("scroll", () => {
+        const rect = contactoSection.getBoundingClientRect();
+        const inView =
+          rect.top <= window.innerHeight / 2 &&
+          rect.bottom >= window.innerHeight / 2;
+
+        contactoLateral.classList.toggle("visible", inView);
       });
     </script>
   </body>
