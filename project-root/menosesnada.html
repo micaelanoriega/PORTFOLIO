@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Descripción</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .trankii-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 60px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .trankii-container img.hero {
+        max-width: 500px;
+        margin-bottom: 20px;
+
+        object-fit: cover;
+        object-position: center;
+        border-radius: 5px;
+        width: 40%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+      }
+      .box-contenido {
+        background-color: #5a1a15;
+        border-radius: 10px;
+        padding: 40px;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .box-texto {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+      }
+
+      .box-texto h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .box-imagen {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 250px;
+      }
+
+      .box-imagen img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        height: auto;
+      }
+
+      .descripcion {
+        max-width: 1100px;
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: justify;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+
+      .mockup-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 0px;
+        justify-items: center;
+      }
+
+      .mockup-grid img {
+        width: 100%;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      }
+
+      .volver-btn {
+        margin-top: 60px;
+        padding: 12px 30px;
+        background-color: white;
+        color: #5a1a15;
+        font-weight: bold;
+        font-family: "Inter", sans-serif;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+      }
+
+      .volver-btn:hover {
+        background-color: #ddd;
+      }
+
+      .carrusel-container {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px 0;
+      }
+
+      .carrusel.auto-scroll {
+        display: flex;
+        gap: 10px;
+        animation: scroll 30s linear infinite;
+        width: max-content;
+      }
+
+      .carrusel.auto-scroll img {
+        height: 300px;
+        border-radius: 6px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+      .carrusel.auto-scroll img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .carrusel-lento-container {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px 0;
+      }
+
+      .carrusel-lento {
+        display: flex;
+        gap: 10px;
+        animation: scrollLentoReverso 80s linear infinite;
+        width: max-content;
+      }
+
+      .carrusel-lento img {
+        height: 320px;
+        border-radius: 10px;
+        object-fit: cover;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      .carrusel-lento img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+
+      @keyframes scrollLentoReverso {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu-flecha" id="botonMenu">MENU</div>
+    <div class="menu-central" id="menuCentral">
+      <nav>
+        <a href="index.html#Paginaprincipal">Pagina Principal</a>
+        <a href="index.html#sobre-mi">Sobre mí</a>
+        <a href="index.html#trabajos">Mis trabajos</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="menosesnada-lateral">MENOS ES NADA</div>
+
+    <div class="trankii-container">
+      <div class="box-contenido">
+        <div class="box-texto">
+          <h1>Sobre el proyecto</h1>
+          <p class="descripcion">
+            Este proyecto se basa en utilizar el diseño gráfico no solo como una
+            herramienta estética, sino como un dispositivo de crítica social y
+            cultural, capaz de visibilizar problemas normalizados por la cultura
+            visual moderna. La campaña está compuesta por una serie de pósters
+            conceptuales que abordan el impacto de las redes sociales en la
+            normalización de la anorexia, uno de los trastornos de la conducta
+            alimentaria (TCA) más graves y extendidos entre la juventud. A
+            través de recursos como la fragmentación visual, la repetición, el
+            vacío y el simbolismo del número y del cuerpo, la propuesta gráfica
+            busca representar la tensión emocional, el deseo de desaparición y
+            la violencia simbólica que ejerce la estética dominante en los
+            espacios digitales. El objetivo no es ilustrar la enfermedad desde
+            lo literal, sino traducirla visualmente desde lo simbólico y
+            emocional, para abrir espacios de reflexión crítica.
+          </p>
+        </div>
+        <div class="box-imagen">
+          <img src="assets/images/trabajo5.jpg" alt="Mockup Autentica" />
+        </div>
+      </div>
+      <h3>Desarrollo y estructura del proyecto</h3>
+
+      <div class="carrusel-container">
+        <div class="carrusel auto-scroll">
+          <img
+            src="assets/images/popo/Portfolio creativo fotografía y creación de contenido minimalista sencillo elegante (2).jpg"
+          />
+          <img src="assets/images/popo/MOCKUP CTRL.jpg" />
+          <img
+            src="assets/images/popo/Portfolio creativo fotografía y creación de contenido minimalista sencillo elegante (1) copy.jpg"
+          />
+        </div>
+      </div>
+
+      <p class="descripcion">
+        Los Trastornos de la Conducta Alimentaria (TCA) han sido representados
+        tradicionalmente mediante imágenes explícitas y simbología directa:
+        balanzas, cintas métricas, cuerpos extremadamente delgados, espejos
+        deformantes, platos vacíos. Si bien estos elementos han servido para
+        visibilizar la problemática, con el tiempo se han convertido en una
+        especie de “lenguaje visual estándar” que, lejos de generar impacto,
+        satura, repite y en algunos casos desensibiliza. Además, este tipo de
+        representación puede resultar desencadenante para personas en riesgo o
+        en proceso de recuperación. Mostrar el cuerpo como objeto o como síntoma
+        no siempre comunica el trasfondo real del trastorno: el desgaste mental,
+        la presión interna, el control excesivo y el vacío emocional. Por eso,
+        mi enfoque parte de una decisión consciente: no mostrar el cuerpo ni
+        recurrir a los símbolos típicos, sino trabajar desde un lugar más frío,
+        más sutil y más conceptual.Los carteles La soga y Ctrl usan elementos
+        visuales cargados de metáfora para hablar del TCA desde el lugar donde
+        más habita: la mente, el silencio, el autocontrol. Porque el TCA no
+        siempre es visible, no siempre se diagnostica, no siempre se denuncia.
+        Es un tema tabú, muchas veces minimizado o mal entendido. Y justamente
+        por eso, este tipo de enfoque genera más intriga y más conversación: no
+        porque diga más, sino porque obliga a mirar dos veces.
+      </p>
+
+      <a href="index.html#trabajos" class="volver-btn"
+        >← Volver a Mis Trabajos</a
+      >
+    </div>
+
+    <script>
+      const botonMenu = document.getElementById("botonMenu");
+      const menuCentral = document.getElementById("menuCentral");
+
+      botonMenu.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menuCentral.classList.toggle("activo");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          menuCentral.classList.contains("activo") &&
+          !menuCentral.contains(e.target) &&
+          !botonMenu.contains(e.target)
+        ) {
+          menuCentral.classList.remove("activo");
+        }
+      });
+
+      menuCentral.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuCentral.classList.remove("activo");
+        });
+      });
+    </script>
+    <footer>
+      <p>
+        Portfolio mik © 2025 by Micaela Noriega is licensed under CC BY-NC-ND
+        4.0
+      </p>
+    </footer>
+  </body>
+</html>

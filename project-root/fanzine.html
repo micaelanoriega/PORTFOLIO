@@ -6,15 +6,11 @@
     <title>Descripción</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      body {
-        background-color: #000000;
-        color: white;
-        font-family: "inter", sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-
       .trankii-container {
         max-width: 1100px;
         margin: 0 auto;
@@ -80,27 +76,6 @@
         height: auto;
       }
 
-      h1 {
-        font-family: "Anton", sans-serif;
-        font-size: 2rem;
-        margin-bottom: 10px;
-        text-align: center;
-      }
-      h2 {
-        font-family: "Anton", sans-serif;
-        font-size: 2rem;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        text-align: left;
-      }
-      h3 {
-        font-family: "Anton", sans-serif;
-        font-size: 1.5rem;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        text-align: center;
-      }
-
       .descripcion {
         max-width: 1100px;
         font-size: 1rem;
@@ -139,70 +114,6 @@
 
       .volver-btn:hover {
         background-color: #ddd;
-      }
-
-      .menu-flecha {
-        position: fixed;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        background-color: white;
-        color: #5a1a15;
-        font-family: Impact, sans-serif;
-        font-size: 1.5rem;
-        writing-mode: vertical-rl;
-        text-orientation: mixed;
-        padding: 60px 30px;
-        border-radius: 10px 0px 0px 10px;
-        clip-path: polygon(100% 50%, 100% 0, 2 2, 0 100%, 80% 80%);
-        cursor: pointer;
-        z-index: 100;
-        box-shadow: -6px 0 10px rgba(0, 0, 0, 0.3);
-      }
-
-      .menu-central {
-        position: fixed;
-        top: 50%;
-        left: 30%;
-        transform: translate(100%, -50%);
-
-        width: 100%;
-        background-color: #732828;
-        padding: 50px 60px;
-        border-radius: 10px;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-        transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-          opacity 0.8s ease;
-        z-index: 99;
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      .menu-central.activo {
-        transform: translate(2%, -50%);
-        opacity: 1;
-        pointer-events: all;
-        animation: slideIn 0.5s ease-out forwards;
-      }
-
-      .menu-central nav {
-        display: flex;
-        gap: 90px;
-        justify-content: left;
-        align-items: center;
-        font-family: "Inter", sans-serif;
-        font-size: 1.3rem;
-        flex-wrap: wrap;
-      }
-
-      .menu-central nav a {
-        text-decoration: none;
-        color: rgb(255, 255, 255);
-        transition: color 0.3s ease;
-      }
-
-      .menu-central nav a:hover {
-        color: #5a1a15;
       }
 
       .carrusel-container {
@@ -368,10 +279,10 @@
       </div>
 
       <p class="descripcion">
-        El fanzine fue diseñado en formato B5 (18,2 × 25,7 cm), un tamaño que
+        El fanzine fue diseñado en formato B5 (18,2 x 25,7 cm), un tamaño que
         nos permitió equilibrar comodidad de lectura con espacio suficiente para
         experimentar visualmente. Para garantizar la coherencia compositiva,
-        utilizamos una retícula base de 12,7 × 12,7 mm, sobre la cual
+        utilizamos una retícula base de 12,7 x 12,7 mm, sobre la cual
         construimos la maquetación completa del proyecto, respetando siempre los
         márgenes necesarios para la impresión. A partir de esta base
         estructural, desarrollamos cada página combinando tipografía con

@@ -4,7 +4,135 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Error 404</title>
-    <link rel="stylesheet" href="index.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(circle at 50% 30%, #5a1a15, #000);
+        color: white;
+        font-family: "Inter", sans-serif;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .container {
+        max-width: 600px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-family: "Rubik Moonrocks", cursive;
+        font-size: 9rem;
+        position: relative;
+        display: inline-block;
+        animation: glitch 1.2s infinite;
+        color: white;
+      }
+
+      h1::before,
+      h1::after {
+        content: "404";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        color: #180000;
+        background: transparent;
+      }
+
+      h1::before {
+        left: 2px;
+        text-shadow: -2px 0 rgb(93, 10, 10);
+        animation: glitchTop 1.2s infinite;
+      }
+
+      h1::after {
+        left: -2px;
+        text-shadow: -2px 0 rgb(132, 23, 23);
+        animation: glitchBottom 1.2s infinite;
+      }
+
+      @keyframes glitch {
+        0% {
+          transform: none;
+        }
+        20% {
+          transform: skew(-5deg);
+        }
+        40% {
+          transform: skew(5deg);
+        }
+        60% {
+          transform: translateX(3px);
+        }
+        80% {
+          transform: translateX(-3px);
+        }
+        100% {
+          transform: none;
+        }
+      }
+
+      @keyframes glitchTop {
+        0% {
+          clip-path: inset(0 0 80% 0);
+          transform: translate(-2px, -2px);
+        }
+        50% {
+          clip-path: inset(0 0 20% 0);
+          transform: translate(2px, 2px);
+        }
+        100% {
+          clip-path: inset(0 0 80% 0);
+          transform: translate(-2px, -2px);
+        }
+      }
+
+      @keyframes glitchBottom {
+        0% {
+          clip-path: inset(80% 0 0 0);
+          transform: translate(2px, 2px);
+        }
+        50% {
+          clip-path: inset(20% 0 0 0);
+          transform: translate(-2px, -2px);
+        }
+        100% {
+          clip-path: inset(80% 0 0 0);
+          transform: translate(2px, 2px);
+        }
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin: 20px 0;
+        opacity: 0.8;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: white;
+        color: #5a1a15;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: transform 0.2s ease, background 0.3s ease;
+        opacity: 0.9;
+      }
+
+      .btn:hover {
+        background-color: #eee;
+        transform: scale(1.05);
+      }
+    </style>
   </head>
   <body>
     <div class="container">

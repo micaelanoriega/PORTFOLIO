@@ -5,8 +5,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
-
+  font-family: "IBM Plex Serif", serif;
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
@@ -48,8 +47,8 @@ header {
 }
 
 .hero-center .logo {
-  font-family: Impact, sans-serif;
-  font-size: 10rem;
+  font-family: Impact, serif;
+  font-size: 14rem;
   color: white;
   text-align: left;
   animation: colorChange 5s infinite;
@@ -158,7 +157,7 @@ section {
   margin-top: 10px;
   color: white;
   font-weight: 600;
-  font-family: "Helvetica", sans-serif;
+  font-family: "IMPACT", sans-serif;
   font-size: 0.95rem;
 }
 
@@ -210,7 +209,7 @@ section {
   gap: 90px;
   justify-content: left;
   align-items: center;
-  font-family: "Inter", sans-serif;
+  font-family: "impact", sans-serif;
   font-size: 1.3rem;
   flex-wrap: wrap;
 }
@@ -226,14 +225,14 @@ section {
 }
 .sobre-mi-lateral {
   position: fixed;
-  top: 15%;
+  top: 25%;
   left: 0;
   transform: translateY(-50%);
   rotate: 180deg;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   color: #732828;
-  font-family: "Inter", sans-serif;
+  font-family: "impact", sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
   opacity: 0;
@@ -273,7 +272,7 @@ section {
 }
 
 .sobre-texto h2 {
-  font-family: "Anton", sans-serif;
+  font-family: "IMPACT", sans-serif;
   font-size: 2rem;
   margin-bottom: 20px;
 }
@@ -281,7 +280,38 @@ section {
 .sobre-texto p {
   font-size: 1rem;
   line-height: 1.6;
-  font-family: "Inter", sans-serif;
+  font-family: "IBM Plex Serif", serif;
+}
+.tarjetas-presentacion {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.tarjetas-presentacion a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarjetas-presentacion img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  filter: brightness(1) invert(0);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tarjetas-presentacion img:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2) sepia(1) hue-rotate(-20deg) saturate(1);
 }
 
 @media (max-width: 768px) {
@@ -301,7 +331,7 @@ section {
   transform: translateY(-50%) rotate(180deg);
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-family: "inter", sans-serif;
+  font-family: "impact", sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
   color: #732828;
@@ -322,11 +352,12 @@ section {
   transform: translateY(-50%) rotate(180deg);
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-family: "Anton", sans-serif;
+  font-family: "impact", sans-serif;
   font-size: 2.5rem;
-  color: white;
+  font-weight: bold;
+  color: #732828;
   z-index: 20;
-  padding: 10px;
+  padding: 20px;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -334,14 +365,68 @@ section {
 .contacto-lateral.visible {
   opacity: 0.8;
 }
-footer {
-  background-color: #5a1a15;
-  color: white;
+.contacto-form {
+  background-color: #1a1a1a; /* fondo suave oscuro */
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 50px auto;
   text-align: center;
-  padding: 20px 0;
-  font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
-  margin-top: 60px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+.contacto-form h2 {
+  font-family: "Impact", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.contacto-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-row input {
+  flex: 1;
+  min-width: 250px;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+button {
+  align-self: flex-end;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #d6d6d6;
 }
 
 .trabajo-lateral {
@@ -351,7 +436,7 @@ footer {
   transform: translateY(-50%);
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-family: "Anton", sans-serif;
+  font-family: "impact", sans-serif;
   font-size: 2rem;
   font-weight: bold;
   color: white;
@@ -383,26 +468,26 @@ footer {
 }
 
 .trabajo-descripcion h2 {
-  font-family: "Anton", sans-serif;
+  font-family: "IBM Plex Serif", sans-serif;
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
 .trabajo-descripcion p {
-  font-family: "Inter", sans-serif;
+  font-family: "IBM Plex Serif", sans-serif;
   line-height: 1.6;
   font-size: 1rem;
 }
 
 .autentica-lateral {
   position: fixed;
-  top: 50;
+  top: 15%;
   left: 0;
   transform: translateY(-50%);
   rotate: 180deg;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-family: "Anton", sans-serif;
+  font-family: "impact", sans-serif;
   font-size: 4rem;
   font-weight: bold;
   color: white;
@@ -412,13 +497,13 @@ footer {
 
 .documental-lateral {
   position: fixed;
-  top: -15%;
+  top: -0%;
   left: 0;
   transform: translateY(-50%);
   rotate: 180deg;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-family: "Anton", sans-serif;
+  font-family: "impact", sans-serif;
   font-size: 4rem;
   font-weight: bold;
   color: white;
@@ -427,13 +512,28 @@ footer {
 }
 .trankii-lateral {
   position: fixed;
-  top: 15%;
+  top: 25%;
   left: 0;
   transform: translateY(-50%);
   rotate: 180deg;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-family: "Anton", sans-serif;
+  font-family: "impact", sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  padding-left: 20px;
+  z-index: 20;
+}
+.menosesnada-lateral {
+  position: fixed;
+  top: -0%;
+  left: 0;
+  transform: translateY(-50%);
+  rotate: 180deg;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "impact", sans-serif;
   font-size: 4rem;
   font-weight: bold;
   color: white;
