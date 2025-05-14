@@ -48,7 +48,7 @@ header {
 
 .hero-center .logo {
   font-family: Impact, serif;
-  font-size: 14rem;
+  font-size: clamp(8rem, 10vw, 18rem); /* <- nuevo */
   color: white;
   text-align: left;
   animation: colorChange 5s infinite;
