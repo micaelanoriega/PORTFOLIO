@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AUTENTICA</title>
+    <title>Descripción</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/index.css" />
     <style>
       body {
-        background-color: #5a1a15;
+        background-color: #000000;
         color: white;
-        font-family: "Inter", sans-serif;
+        font-family: "inter", sans-serif;
         margin: 0;
         padding: 0;
       }
@@ -35,26 +35,86 @@
         height: auto;
         aspect-ratio: 1 / 1;
       }
+      .box-contenido {
+        background-color: #5a1a15;
+        border-radius: 10px;
+        padding: 40px;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .box-texto {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+      }
+
+      .box-texto h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .box-imagen {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 250px;
+      }
+
+      .box-imagen img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
 
       h1 {
         font-family: "Anton", sans-serif;
         font-size: 2rem;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      h2 {
+        font-family: "Anton", sans-serif;
+        font-size: 2rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      h3 {
+        font-family: "Anton", sans-serif;
+        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
         text-align: center;
       }
 
       .descripcion {
-        max-width: 800px;
+        max-width: 1100px;
         font-size: 1rem;
         line-height: 1.6;
-        text-align: center;
-        margin-bottom: 60px;
+        text-align: justify;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding: 0 15px;
+        margin-bottom: 30px;
       }
 
       .mockup-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
+        gap: 0px;
         justify-items: center;
       }
 
@@ -145,57 +205,231 @@
       .menu-central nav a:hover {
         color: #5a1a15;
       }
+
+      .carrusel-container {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 30px;
+        padding: 10px 0;
+      }
+
+      .carrusel.auto-scroll {
+        display: flex;
+        gap: 20px;
+        animation: scroll 30s linear infinite;
+        width: max-content;
+      }
+
+      .carrusel.auto-scroll img {
+        height: 200px;
+        border-radius: 6px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .carrusel-lento-container {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px 0;
+      }
+
+      .carrusel-lento {
+        display: flex;
+        gap: 10px;
+        animation: scrollLentoReverso 80s linear infinite;
+        width: max-content;
+      }
+
+      .carrusel-lento img {
+        height: 320px;
+        border-radius: 10px;
+        object-fit: cover;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      .carrusel-lento img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+
+      @keyframes scrollLentoReverso {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
     </style>
   </head>
+
   <body>
-    <!-- Botón MENU -->
     <div class="menu-flecha" id="botonMenu">MENU</div>
 
-    <!-- Menú central oculto -->
     <div class="menu-central" id="menuCentral">
       <nav>
+        <a href="index.html#Paginaprincipal">Pagina Principal</a>
         <a href="index.html#sobre-mi">Sobre mí</a>
         <a href="index.html#trabajos">Mis trabajos</a>
         <a href="index.html#contacto">Contacto</a>
       </nav>
     </div>
+    <div class="autentica-lateral">AUTENTICA</div>
 
-    <!-- Contenido del proyecto -->
     <div class="autentica-container">
-      <img src="assets/images/trabajo1.jpg" alt="Hero Autentica" class="hero" />
-
-      <h1>AUTENTICA</h1>
+      <div class="box-contenido">
+        <div class="box-texto">
+          <h1>Sobre el proyecto</h1>
+          <p class="descripcion">
+            Auténtica es una plataforma de e-commerce desarrollada como trabajo
+            final para la asignatura de Diseño Interactivo. El objetivo fue
+            diseñar un sitio web para una empresa ficticia especializada en la
+            venta de calcetines, aplicando principios de diseño centrado en el
+            usuario y creando una experiencia visualmente atractiva, funcional y
+            emocionalmente conectada. El proyecto comenzó con una fase de
+            investigación de usuarios y análisis de competencia, que permitió
+            definir perfiles de user persona y detectar oportunidades clave para
+            mejorar la experiencia de compra. A partir de esto, desarrollé un
+            prototipo funcional en Figma, pensado inicialmente para formato
+            desktop y luego adaptado a otros dispositivos. El sitio contempla
+            todo el recorrido del usuario, desde la exploración del catálogo
+            hasta la finalización de la compra, asegurando una experiencia
+            coherente, fluida y adaptativa. La propuesta se construyó siguiendo
+            la metodología DCU, respetando principios heurísticos y priorizando
+            tanto la claridad como la expresividad visual.
+          </p>
+        </div>
+        <div class="box-imagen">
+          <img src="assets/images/trabajo1.jpg" alt="Mockup Autentica" />
+        </div>
+      </div>
+      <h3>Inspiraciónes</h3>
+      <div class="carrusel-container">
+        <div class="carrusel auto-scroll">
+          <img src="assets/images/fotomedia1.jpg" alt="fotomedia1" />
+          <img src="assets/images/fotomedia2.jpg" alt="fotomedia2" />
+          <img src="assets/images/fotomedia3.jpg" alt="fotomedia3" />
+          <img src="assets/images/fotomedia4.jpg" alt="fotomedia4" />
+          <img src="assets/images/fotomedia5.jpg" alt="fotomedia5" />
+          <img src="assets/images/fotomedia6.jpg" alt="fotomedia6" />
+          <img src="assets/images/fotomedia1.jpg" alt="fotomedia1" />
+          <img src="assets/images/fotomedia2.jpg" alt="fotomedia2" />
+          <img src="assets/images/fotomedia3.jpg" alt="fotomedia3" />
+          <img src="assets/images/fotomedia4.jpg" alt="fotomedia4" />
+          <img src="assets/images/fotomedia5.jpg" alt="fotomedia5" />
+          <img src="assets/images/fotomedia6.jpg" alt="fotomedia6" />
+          <img src="assets/images/fotomedia1.jpg" alt="fotomedia1" />
+          <img src="assets/images/fotomedia2.jpg" alt="fotomedia2" />
+          <img src="assets/images/fotomedia3.jpg" alt="fotomedia3" />
+          <img src="assets/images/fotomedia4.jpg" alt="fotomedia4" />
+          <img src="assets/images/fotomedia5.jpg" alt="fotomedia5" />
+          <img src="assets/images/fotomedia6.jpg" alt="fotomedia6" />
+        </div>
+      </div>
 
       <p class="descripcion">
-        En este proyecto se ha desarrollado el diseño de un sitio web utilizando
-        Figma, inicialmente optimizado para formato desktop, con la intención de
-        adaptarlo a otros dispositivos. El objetivo fue crear un prototipo
-        funcional que integre las necesidades de los usuarios, respetando
-        principios heurísticos y priorizando una experiencia de usuario fluida.
-        Para lograr esto, se realizó una investigación de usuario y secundaria,
-        en la que se analizó a la competencia y a los user persona. El diseño
-        sigue la metodología de DCU y está orientado a una empresa especializada
-        en calcetines que requiere una plataforma de comercio electrónico para
-        exhibir y vender sus productos. El sitio web incluye toda la experiencia
-        de compra, desde la navegación hasta la finalización de la transacción,
-        garantizando un diseño adaptable.
+        La página de Bonne Maison fue mi principal fuente de inspiración,
+        especialmente en lo relacionado con las fotografías utilizadas en mi
+        diseño web. Me encantaron los calcetines que ofrecen, ya que destacan
+        por su estilo y calidad, y el formato de la página me pareció muy
+        interactivo y visualmente atractivo. Esto me motivó a incorporar
+        elementos similares en mi proyecto, buscando recrear una experiencia
+        igualmente envolvente y dinámica para los usuarios.
       </p>
-
-      <div class="mockup-grid">
-        <img src="assets/images/mockup1.jpg" alt="Mockup 1" />
-        <img src="assets/images/mockup2.jpg" alt="Mockup 2" />
-        <img src="assets/images/mockup3.jpg" alt="Mockup 3" />
-        <img src="assets/images/mockup4.jpg" alt="Mockup 4" />
-        <img src="assets/images/mockup5.jpg" alt="Mockup 5" />
-        <img src="assets/images/mockup6.jpg" alt="Mockup 6" />
+      <h3>Desarrollo y estructura del proyecto</h3>
+      <div class="carrusel-lento-container">
+        <div class="carrusel-lento">
+          <img src="assets/images/USARESTOPARAFOTOPRINVIPAL.png" />
+          <img src="assets/images/CMA/appo.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 05.16.47.jpg" />
+          <img src="assets/images/USARESTOPARAFOTOPRINVIPAL.png" />
+          <img src="assets/images/CMA/appo.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 05.16.47.jpg" />
+          <img src="assets/images/USARESTOPARAFOTOPRINVIPAL.png" />
+          <img src="assets/images/CMA/appo.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 05.16.47.jpg" />
+        </div>
       </div>
+      <p class="descripcion">
+        Dado el alcance del proyecto y la variedad de interacciones necesarias
+        para reflejar un entorno de e-commerce completo, decidí estructurarlo en
+        múltiples páginas funcionales, cada una pensada para cubrir una etapa
+        específica del recorrido del usuario. Esta elección me permitió trabajar
+        en profundidad la navegación, la arquitectura de la información y los
+        microdetalles que hacen más rica la experiencia digital. Uno de los
+        mayores retos fue romper con los esquemas tradicionales de clasificación
+        por género o edad.
+      </p>
+      <div class="carrusel-lento-container">
+        <div class="carrusel-lento">
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 20.49.22.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 20.08.19.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 21.04.09.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 20.49.22.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 20.08.19.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 21.04.09.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 20.49.22.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 20.08.19.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 21.04.09.jpg" />
+        </div>
+      </div>
+      <p class="descripcion">
+        En su lugar, opté por una organización más abierta y personalizada,
+        basada en estilos, temáticas y necesidades específicas como ocasiones de
+        uso, colores o tipos de diseño. Esto exigió un trabajo previo de
+        investigación de mercado, análisis de competencia y definición clara del
+        público objetivo. La página principal fue diseñada en dos versiones: una
+        general para usuarios no registrados, con una imagen destacada que
+        resume visualmente la identidad de la marca, y otra más personalizada
+        que se activa al iniciar sesión, ofreciendo accesos directos y
+        navegación adaptada. Además, desarrollé overlays interactivos con
+        cierres tanto manuales como automáticos, y usé smart animations para
+        mantener una estética fluida y coherente. La cabecera permanece fija
+        durante toda la navegación y se adapta al comportamiento del usuario. Al
+        pasar el mouse, se despliegan submenús que facilitan el acceso a otras
+        secciones. También implementé un botón discreto para cambiar entre dark
+        y light mode, priorizando la personalización sin sacrificar la limpieza
+        visual.
+      </p>
+      <div class="carrusel-lento-container">
+        <div class="carrusel-lento">
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 20.09.15.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 21.07.00.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 21.03.26.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 20.09.15.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 21.07.00.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 21.03.26.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 20.09.15.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 21.07.00.jpg" />
+          <img src="assets/images/CMA/Screenshot 2024-12-15 at 21.03.26.jpg" />
+        </div>
+      </div>
+
+      <p class="descripcion">
+        Cada sección del sitio: catálogo, ficha de producto, lista de deseos,
+        carrito de compras, dirección de envío, métodos de pago y confirmación,
+        fue diseñada en diferentes estados para contemplar todas las
+        posibilidades de interacción. Esto incluyó páginas vacías, overlays de
+        resumen, y transiciones suaves entre etapas del proceso de compra. El
+        resultado es un proyecto que refleja no solo los valores de Auténtica,
+        sino también mi manera de entender el diseño como un puente entre lo
+        funcional y lo emocional, lo visual y lo experiencial.
+      </p>
 
       <a href="index.html#trabajos" class="volver-btn"
         >← Volver a Mis Trabajos</a
       >
     </div>
 
-    <!-- Script del menú -->
     <script>
       const botonMenu = document.getElementById("botonMenu");
       const menuCentral = document.getElementById("menuCentral");
@@ -221,5 +455,11 @@
         });
       });
     </script>
+    <footer>
+      <p>
+        Portfolio mik © 2025 by Micaela Noriega is licensed under CC BY-NC-ND
+        4.0
+      </p>
+    </footer>
   </body>
 </html>

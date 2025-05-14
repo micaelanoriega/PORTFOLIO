@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Descripción</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      body {
+        background-color: #000000;
+        color: white;
+        font-family: "inter", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .autentica-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 60px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .autentica-container img.hero {
+        max-width: 500px;
+        margin-bottom: 20px;
+
+        object-fit: cover;
+        object-position: center;
+        border-radius: 5px;
+        width: 40%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+      }
+      .box-contenido {
+        background-color: #5a1a15;
+        border-radius: 10px;
+        padding: 40px;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .box-texto {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+      }
+
+      .box-texto h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .box-imagen {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 250px;
+      }
+
+      .box-imagen img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      .box-video {
+        flex: 1;
+        display: c;
+        justify-content: center;
+        align-items: center;
+        min-width: 250px;
+      }
+      .box-video video {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      .video-texto-box {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 40px auto;
+        padding: 20px;
+        max-width: 1100px;
+      }
+
+      .video-box video {
+        width: 100%;
+        max-width: 480px;
+        aspect-ratio: 1 / 1;
+        border-radius: 5px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        object-fit: cover;
+      }
+
+      .texto-box {
+        flex: 1;
+        min-width: 300px;
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: justify;
+        color: white;
+      }
+
+      h1 {
+        font-family: "Anton", sans-serif;
+        font-size: 2rem;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      h2 {
+        font-family: "Anton", sans-serif;
+        font-size: 2rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      h3 {
+        font-family: "Anton", sans-serif;
+        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      H4 {
+        font-family: "Anton", sans-serif;
+        font-size: 1.2rem;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        text-align: left;
+      }
+
+      .descripcion {
+        max-width: 1100px;
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: justify;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+
+      .mockup-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 0px;
+        justify-items: center;
+      }
+
+      .mockup-grid img {
+        width: 100%;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      }
+
+      .volver-btn {
+        margin-top: 60px;
+        padding: 12px 30px;
+        background-color: white;
+        color: #5a1a15;
+        font-weight: bold;
+        font-family: "Inter", sans-serif;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+      }
+
+      .volver-btn:hover {
+        background-color: #ddd;
+      }
+
+      .menu-flecha {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background-color: white;
+        color: #5a1a15;
+        font-family: Impact, sans-serif;
+        font-size: 1.5rem;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        padding: 60px 30px;
+        border-radius: 10px 0px 0px 10px;
+        clip-path: polygon(100% 50%, 100% 0, 2 2, 0 100%, 80% 80%);
+        cursor: pointer;
+        z-index: 100;
+        box-shadow: -6px 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .menu-central {
+        position: fixed;
+        top: 50%;
+        left: 30%;
+        transform: translate(100%, -50%);
+
+        width: 100%;
+        background-color: #732828;
+        padding: 50px 60px;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+          opacity 0.8s ease;
+        z-index: 99;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .menu-central.activo {
+        transform: translate(2%, -50%);
+        opacity: 1;
+        pointer-events: all;
+        animation: slideIn 0.5s ease-out forwards;
+      }
+
+      .menu-central nav {
+        display: flex;
+        gap: 90px;
+        justify-content: left;
+        align-items: center;
+        font-family: "Inter", sans-serif;
+        font-size: 1.3rem;
+        flex-wrap: wrap;
+      }
+
+      .menu-central nav a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        transition: color 0.3s ease;
+      }
+
+      .menu-central nav a:hover {
+        color: #5a1a15;
+      }
+
+      .carrusel-container {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 30px;
+        padding: 10px 0;
+      }
+
+      .carrusel.auto-scroll {
+        display: flex;
+        gap: 20px;
+        animation: scroll 30s linear infinite;
+        width: max-content;
+      }
+
+      .carrusel.auto-scroll img {
+        height: 200px;
+        border-radius: 6px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .carrusel-video-container {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 30px;
+        padding: 10px 0;
+      }
+
+      .carrusel-video {
+        display: flex;
+        gap: 20px;
+        animation: scrollVideos 60s linear infinite;
+        width: max-content;
+      }
+
+      .carrusel-video video {
+        height: 220px;
+        border-radius: 6px;
+        object-fit: cover;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      @keyframes scrollVideos {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .carrusel-lento-container {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px 0;
+      }
+
+      .carrusel-lento {
+        display: flex;
+        gap: 10px;
+        animation: scrollLentoReverso 80s linear infinite;
+        width: max-content;
+      }
+
+      .carrusel-lento img {
+        height: 320px;
+        border-radius: 10px;
+        object-fit: cover;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      .carrusel-lento img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+
+      @keyframes scrollLentoReverso {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="menu-flecha" id="botonMenu">MENU</div>
+
+    <div class="menu-central" id="menuCentral">
+      <nav>
+        <a href="index.html#Paginaprincipal">Pagina Principal</a>
+        <a href="index.html#sobre-mi">Sobre mí</a>
+        <a href="index.html#trabajos">Mis trabajos</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="documental-lateral">UN DÍA A LA VEZ</div>
+
+    <div class="autentica-container">
+      <div class="box-contenido">
+        <div class="box-texto">
+          <h1>Sobre el proyecto</h1>
+          <p class="descripcion">
+            "Un Día a la Vez" es un documental autobiográfico que explora mi
+            experiencia con la salud mental a través de tres etapas clave: la
+            infancia, el punto de quiebre en 2018 y el proceso de recuperación.
+            El proyecto fue desarrollado junto a mis compañeras bajo el nombre
+            Chronos Production, con una narrativa construida a partir de
+            escritos personales y material visual íntimo. La pieza busca
+            visibilizar lo que muchas veces se vive en silencio, rompiendo con
+            los estigmas que rodean la salud mental. Más que ofrecer respuestas,
+            propone una mirada honesta sobre el dolor, la sanación y el paso del
+            tiempo como eje transformador.
+          </p>
+        </div>
+
+        <div class="video-box">
+          <video controls autoplay loop muted playsinline>
+            <source
+              src="https://ik.imagekit.io/micaelanoriega/introdocuvid.mp4?updatedAt=1747184291983"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+
+      <h3>CHRONOS PRODUCTION</h3>
+      <h4>Productora</h4>
+      <div class="video-texto-box">
+        <div class="video-box">
+          <video controls autoplay loop muted playsinline>
+            <source
+              src="https://ik.imagekit.io/micaelanoriega/Intro%20con%20sonido%20copy.mp4?updatedAt=1747180146655"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="texto-box">
+          <p class="descripcion">
+            CHRONOS PRODUCTION es una productora cinematográfica creada por un
+            grupo de estudiantes unidas por una pasión común: el arte
+            audiovisual. Inspiradas en la figura mitológica de Cronos, el dios
+            del tiempo, nuestra productora no solo busca explorar el paso del
+            tiempo, sino también la forma en que este influye, transforma y
+            define nuestras vidas. Los cortos producidos por CHRONOS PRODUCTION
+            tienen un elemento común: el tiempo. Esta conexión nos permite
+            contar historias que exploran cómo el tiempo se presenta en diversas
+            formas: como recuerdo, orden, unidad, filosofía, transformación,
+            cambio, madurez, superación y cura. A través de cada una de las seis
+            obras, el tiempo se convierte en el motor que da vida a nuestras
+            narrativas, marcando cada aspecto de la experiencia humana. CHRONOS
+            PRODUCTION es más que un proyecto audiovisual; es una reflexión
+            sobre cómo nuestras perspectivas personales sobre el tiempo se unen
+            para dar forma a una visión colectiva. Con cada corto, buscamos
+            mostrar que el tiempo no solo transcurre, sino que se convierte en
+            un personaje esencial que da forma a nuestras historias, llevándolas
+            más allá del simple paso de los segundos para explorar su poder
+            transformador.
+          </p>
+        </div>
+      </div>
+      <h3>Salud Mental</h3>
+
+      <video height="400" controls autoplay loop muted playsinline>
+        <source
+          src="https://ik.imagekit.io/micaelanoriega/introtis.mp4?updatedAt=1747181971888"
+          type="video/mp4"
+        />
+      </video>
+      <p class="descripcion">
+        La salud mental no es un tema secundario ni un recurso narrativo: es el
+        eje sobre el cual gira toda la obra. A través de una narrativa
+        profundamente personal, decidí exponer no solo los momentos más visibles
+        de mi proceso, sino también aquellos que suelen quedar ocultos: la
+        confusión, el silencio, la culpa y el miedo que acompañan a sentirse mal
+        sin entender por qué. El documental refleja tres etapas clave de mi
+        recorrido emocional: la infancia, donde muchas heridas comenzaron sin
+        que yo lo supiera; el año 2018, que marcó un quiebre y me obligó a
+        enfrentar de forma directa mi salud mental; y finalmente, el inicio de
+        una recuperación que no es lineal, pero sí consciente. Cada palabra
+        utilizada —especialmente en las dos primeras partes— fue escrita por mí
+        durante ese periodo. No son guiones elaborados a posteriori, sino
+        fragmentos reales de lo que viví, pensados inicialmente como desahogo,
+        no como discurso público. Elegí usarlos en su forma original para
+        mantener la autenticidad y evitar embellecer el dolor. La tercera parte
+        representa una nueva versión de mí misma: alguien que no ha dejado de
+        tener preguntas, pero que ya no se siente definida por el malestar. Al
+        incluir pensamientos actuales, quise mostrar que la sanación no implica
+        borrar el pasado, sino aprender a vivir con él de forma distinta.
+      </p>
+
+      <a href="index.html#trabajos" class="volver-btn"
+        >← Volver a Mis Trabajos</a
+      >
+    </div>
+
+    <script>
+      const botonMenu = document.getElementById("botonMenu");
+      const menuCentral = document.getElementById("menuCentral");
+
+      botonMenu.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menuCentral.classList.toggle("activo");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          menuCentral.classList.contains("activo") &&
+          !menuCentral.contains(e.target) &&
+          !botonMenu.contains(e.target)
+        ) {
+          menuCentral.classList.remove("activo");
+        }
+      });
+
+      menuCentral.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuCentral.classList.remove("activo");
+        });
+      });
+    </script>
+    <footer>
+      <p>
+        Portfolio mik © 2025 by Micaela Noriega is licensed under CC BY-NC-ND
+        4.0
+      </p>
+    </footer>
+  </body>
+</html>

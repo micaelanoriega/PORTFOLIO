@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Descripción</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      body {
+        background-color: #000000;
+        color: white;
+        font-family: "inter", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .trankii-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 60px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .trankii-container img.hero {
+        max-width: 500px;
+        margin-bottom: 20px;
+
+        object-fit: cover;
+        object-position: center;
+        border-radius: 5px;
+        width: 40%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+      }
+      .box-contenido {
+        background-color: #5a1a15;
+        border-radius: 10px;
+        padding: 40px;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .box-texto {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+      }
+
+      .box-texto h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .box-imagen {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 250px;
+      }
+
+      .box-imagen img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        height: auto;
+      }
+
+      h1 {
+        font-family: "Anton", sans-serif;
+        font-size: 2rem;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      h2 {
+        font-family: "Anton", sans-serif;
+        font-size: 2rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      h3 {
+        font-family: "Anton", sans-serif;
+        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .descripcion {
+        max-width: 1100px;
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: justify;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+
+      .mockup-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 0px;
+        justify-items: center;
+      }
+
+      .mockup-grid img {
+        width: 100%;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      }
+
+      .volver-btn {
+        margin-top: 60px;
+        padding: 12px 30px;
+        background-color: white;
+        color: #5a1a15;
+        font-weight: bold;
+        font-family: "Inter", sans-serif;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+      }
+
+      .volver-btn:hover {
+        background-color: #ddd;
+      }
+
+      .menu-flecha {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background-color: white;
+        color: #5a1a15;
+        font-family: Impact, sans-serif;
+        font-size: 1.5rem;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        padding: 60px 30px;
+        border-radius: 10px 0px 0px 10px;
+        clip-path: polygon(100% 50%, 100% 0, 2 2, 0 100%, 80% 80%);
+        cursor: pointer;
+        z-index: 100;
+        box-shadow: -6px 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Menú que se desliza desde la derecha */
+      .menu-central {
+        position: fixed;
+        top: 50%;
+        left: 30%;
+        transform: translate(100%, -50%);
+
+        width: 100%;
+        background-color: #732828;
+        padding: 50px 60px;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+          opacity 0.8s ease;
+        z-index: 99;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .menu-central.activo {
+        transform: translate(2%, -50%);
+        opacity: 1;
+        pointer-events: all;
+        animation: slideIn 0.5s ease-out forwards;
+      }
+
+      /* Contenido dentro del menú */
+      .menu-central nav {
+        display: flex;
+        gap: 90px;
+        justify-content: left;
+        align-items: center;
+        font-family: "Inter", sans-serif;
+        font-size: 1.3rem;
+        flex-wrap: wrap;
+      }
+
+      .menu-central nav a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        transition: color 0.3s ease;
+      }
+
+      .menu-central nav a:hover {
+        color: #5a1a15;
+      }
+
+      .carrusel-container {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px 0;
+      }
+
+      .carrusel.auto-scroll {
+        display: flex;
+        gap: 10px;
+        animation: scroll 30s linear infinite;
+        width: max-content;
+      }
+
+      .carrusel.auto-scroll img {
+        height: 300px;
+        border-radius: 6px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+        .carrusel.auto-scroll img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .carrusel-lento-container {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px 0;
+      }
+
+      .carrusel-lento {
+        display: flex;
+        gap: 10px;
+        animation: scrollLentoReverso 80s linear infinite;
+        width: max-content;
+      }
+
+      .carrusel-lento img {
+        height: 320px;
+        border-radius: 10px;
+        object-fit: cover;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      .carrusel-lento img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+
+      @keyframes scrollLentoReverso {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu-flecha" id="botonMenu">MENU</div>
+
+
+    <div class="menu-central" id="menuCentral">
+      <nav>
+        <a href="index.html#Paginaprincipal">Pagina Principal</a>
+        <a href="index.html#sobre-mi">Sobre mí</a>
+        <a href="index.html#trabajos">Mis trabajos</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="trankii-lateral">TRANKII</div>
+    <div class="trankii-container">
+      <div class="box-contenido">
+        <div class="box-texto">
+          <h1>Sobre el proyecto</h1>
+          <p class="descripcion">
+            En este proyecto desarrollé el diseño y prototipo de una aplicación
+            interactiva enfocada en la salud mental de la Generación Z, un tema
+            con el que tengo una conexión personal profunda. Mi experiencia
+            individual y el análisis de otras plataformas similares me
+            impulsaron a crear una herramienta más cercana, funcional y adaptada
+            a las necesidades reales de los jóvenes. La aplicación busca no solo
+            ofrecer apoyo emocional accesible, sino también contribuir a
+            normalizar las conversaciones sobre salud mental y reducir los
+            estigmas que la rodean. Combinando diseño centrado en el usuario con
+            una visión empática y crítica, mi objetivo es crear una experiencia
+            digital intuitiva que realmente conecte con quienes la usan y
+          promueva el bienestar desde lo cotidiano.
+          </p>
+        </div>
+        <div class="box-imagen">
+          <img src="assets/images/trabajo3.jpg" alt="Mockup Autentica" />
+        </div>
+      </div>
+      <h3>Desarrollo y estructura del proyecto</h3>
+        
+      <div class="carrusel-container">
+        <div class="carrusel auto-scroll">
+          <img src="assets/images/trankifoticos/BIENVENIDA-1.jpg" />
+          <img src="assets/images/trankifoticos/BIENVENIDA-2.jpg" />
+          <img src="assets/images/trankifoticos/BIENVENIDA.jpg" />
+          <img src="assets/images/trankifoticos/Crear cuenta.jpg" />
+          <img src="assets/images/trankifoticos/Editar perfil.jpg" />
+          <img src="assets/images/trankifoticos/Editar perfil 2.jpg" />
+          <img src="assets/images/trankifoticos/BIENVENIDA-1.jpg" />
+          <img src="assets/images/trankifoticos/BIENVENIDA-2.jpg" />
+          <img src="assets/images/trankifoticos/BIENVENIDA.jpg" />
+          <img src="assets/images/trankifoticos/Crear cuenta.jpg" />
+          <img src="assets/images/trankifoticos/Editar perfil.jpg" />
+          <img src="assets/images/trankifoticos/Editar perfil 2.jpg" />
+        </div>
+      </div>
+
+      <p class="descripcion">
+        Desde el momento en que el usuario ingresa a la aplicación, se
+        encontrará con el logo en grande, creando una primera impresión limpia y
+        profesional. Tras un breve "after-delay", será redirigido
+        automáticamente a una segunda pantalla que contiene un mensaje de
+        bienvenida. Consideré fundamental incluir en esta etapa un aviso claro
+        de que la aplicación no sustituye la ayuda profesional. Esto se debe a
+        la sensibilidad de los temas relacionados con la salud mental y al uso
+        de una IA, que, aunque diseñada para apoyar al usuario, puede no ser
+        completamente confiable en todos los casos. Al presionar el botón de
+        “Comenzamos”, se despliega un layout desde la parte inferior de la
+        pantalla que presenta las opciones de “Crear cuenta” o “Iniciar sesión”.
+        Este diseño busca ser intuitivo y accesible, permitiendo al usuario
+        elegir fácilmente la acción que desea realizar, ya sea registrarse como
+        nuevo usuario o acceder a su cuenta existente.
+      </p>
+      
+      <div class="carrusel-lento-container">
+        <div class="carrusel-lento auto-scroll">
+          <img src="assets/images/trankifoticos/Hoy.jpg" />
+          <img src="assets/images/trankifoticos/Hoy2.jpg" />
+          <img src="assets/images/trankifoticos/Hoy6.jpg" />
+          <img src="assets/images/trankifoticos/Historial de emociones.jpg" />
+          <img src="assets/images/trankifoticos/Hoy.jpg" />
+          <img src="assets/images/trankifoticos/Hoy2.jpg" />
+          <img src="assets/images/trankifoticos/Hoy6.jpg" />
+          <img src="assets/images/trankifoticos/Historial de emociones.jpg" />
+          <img src="assets/images/trankifoticos/Hoy.jpg" />
+          <img src="assets/images/trankifoticos/Hoy2.jpg" />
+          <img src="assets/images/trankifoticos/Hoy6.jpg" />
+          <img src="assets/images/trankifoticos/Historial de emociones.jpg" />
+          <img src="assets/images/trankifoticos/Hoy.jpg" />
+          <img src="assets/images/trankifoticos/Hoy2.jpg" />
+          <img src="assets/images/trankifoticos/Hoy6.jpg" />
+          <img src="assets/images/trankifoticos/Historial de emociones.jpg" />
+        </div>
+      </div>
+      <p class="descripcion">
+        Esta es la página donde el usuario puede visualizar su plan actual y
+        gestionar su suscripción. Como se mencionó previamente, la aplicación
+        ofrece una amplia variedad de funciones, y para mantener la
+        competitividad en el mercado, algunas de estas funcionalidades están
+        disponibles exclusivamente a través de un plan premium. Esta estrategia
+        permite sostener el desarrollo continuo de la aplicación y garantizar su
+        calidad. En esta página, el usuario puede optar por actualizar su plan
+        seleccionando la opción "Suscribirme a plan premium", que lo redirigirá
+        a la sección de métodos de pago. Las opciones disponibles incluyen las
+        plataformas más reconocidas y confiables: tarjeta de crédito, Apple Pay
+        y tarjeta de regalo. Al seleccionar cualquiera de estas opciones, se
+        desplegará un formulario donde el usuario podrá ingresar su información
+        de pago y autorizar la transacción. Una vez completado el proceso,
+        aparecerá una notificación de "Compra exitosa", confirmando la
+        activación del plan premium. A partir de ese momento, el usuario tendrá
+        acceso inmediato a todas las funciones exclusivas, mejorando su
+        experiencia en la aplicación.
+        <div class="carrusel-container">
+            <div class="carrusel auto-scroll">
+              <img src="assets/images/trankifoticos/mas opciones-1.jpg" />
+                <img src="assets/images/trankifoticos/mas opciones-2.jpg" />
+                <img src="assets/images/trankifoticos/mensaje titi-1.jpg" />
+                <img src="assets/images/trankifoticos/mensaje titi.jpg" />
+                <img src="assets/images/trankifoticos/Metodo de pago a.jpg" />
+                <img src="assets/images/trankifoticos/Motivación.jpg" />
+                <img src="assets/images/trankifoticos/Perfil.jpg" />
+                <img src="assets/images/trankifoticos/Plan actual.jpg" />
+                <img src="assets/images/trankifoticos/Objetivos.jpg" />
+                <img src="assets/images/trankifoticos/mas opciones-1.jpg" />
+                <img src="assets/images/trankifoticos/mas opciones-2.jpg" />
+                <img src="assets/images/trankifoticos/mensaje titi-1.jpg" />
+                <img src="assets/images/trankifoticos/mensaje titi.jpg" />
+                <img src="assets/images/trankifoticos/Metodo de pago a.jpg" />
+                <img src="assets/images/trankifoticos/Motivación.jpg" />
+                <img src="assets/images/trankifoticos/Perfil.jpg" />
+                <img src="assets/images/trankifoticos/Plan actual.jpg" />
+                <img src="assets/images/trankifoticos/Objetivos.jpg" />
+              
+            </div>
+          </div>
+    
+          <p class="descripcion">
+            Otra sección destacada es la de Motivaciones, inspirada en la app I Am Sober, donde el usuario puede registrar aquello que lo impulsa a seguir adelante. Esta funcionalidad permite añadir textos o imágenes significativas, reforzando el compromiso personal y proporcionando un recordatorio constante de las razones para continuar.
+
+La app también cuenta con una página destinada a la gestión del plan premium, en la que el usuario puede visualizar su suscripción actual y, si lo desea, actualizarla. El proceso de pago se realiza de forma segura a través de plataformas confiables como Apple Pay o tarjeta de crédito, y al completar la transacción, se activa el acceso inmediato a funciones exclusivas.
+
+Por último, la sección de Perfil centraliza toda la información relevante del usuario y ofrece opciones como editar datos personales o eliminar la cuenta. Esta última acción está protegida por una pantalla de confirmación para garantizar que se trata de una decisión consciente.
+
+Cada una de estas páginas fue diseñada para construir una experiencia intuitiva, funcional y empática, brindando al usuario herramientas prácticas para gestionar su salud mental de manera activa y personalizada.
+          </p>
+        </p>
+        <a href="index.html#trabajos" class="volver-btn"
+          >← Volver a Mis Trabajos</a
+        >
+      
+    </div>
+    
+
+    <script>
+      const botonMenu = document.getElementById("botonMenu");
+      const menuCentral = document.getElementById("menuCentral");
+
+      botonMenu.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menuCentral.classList.toggle("activo");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          menuCentral.classList.contains("activo") &&
+          !menuCentral.contains(e.target) &&
+          !botonMenu.contains(e.target)
+        ) {
+          menuCentral.classList.remove("activo");
+        }
+      });
+
+      menuCentral.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuCentral.classList.remove("activo");
+        });
+      });
+    </script>
+    <footer>
+      <p>
+        Portfolio mik © 2025 by Micaela Noriega is licensed under CC BY-NC-ND
+        4.0
+      </p>
+    </footer>
+  </body>
+</html>

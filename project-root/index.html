@@ -2,6 +2,10 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MIKNOR</title>
     <link rel="stylesheet" href="css/theme.css" />
@@ -15,19 +19,17 @@
   </head>
 
   <body>
-    <!-- Botón MENU fijo (flecha visible siempre a la derecha) -->
     <div class="menu-flecha" id="botonMenu">MENU</div>
 
-    <!-- Menú central desplegable -->
     <div class="menu-central" id="menuCentral">
       <nav>
+        <a href="#Paginaprincipal">Pagina Principal</a>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#trabajos">Mis trabajos</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </div>
 
-    <!-- Portada principal -->
     <header class="hero">
       <div class="vertical-left">
         <span class="side-text">PORTFOLIO</span>
@@ -43,7 +45,6 @@
     </header>
 
     <main>
-      <!-- Esto va fuera del section, justo después del header -->
       <div class="sobre-mi-lateral" id="sobreLateral">SOBRE MÍ</div>
       <section id="sobre-mi" class="sobre-mi-layout">
         <div class="sobre-foto">
@@ -52,9 +53,23 @@
         <div class="sobre-texto">
           <h2>Micaela Noriega</h2>
           <p>
-            Hola, soy Miki. Diseñadora gráfica apasionada por lo visual, lo
-            simbólico y lo emocional. Me inspiran los detalles que conectan con
-            las personas y comunican más allá de lo obvio.
+            Hola, soy Micaela, tengo 21 años y vengo de Lima, Perú. Actualmente
+            estudio Diseño Gráfico en UDIT, Madrid, donde he encontrado un
+            espacio para explorar no solo lo visual, sino también lo conceptual
+            y emocional detrás de cada proyecto. Para mí, el diseño va más allá
+            de lo estético. Me interesa contar historias, generar sensaciones y
+            provocar reflexiones. Me gusta trabajar desde lo emocional porque
+            creo que las ideas que conectan con la gente son las que dejan
+            huella. Ya sea a través de un cartel, una marca o una interfaz,
+            busco crear experiencias que se sientan genuinas, humanas. Me
+            inspiran los detalles, las contradicciones, lo cotidiano y lo
+            invisible. Muchas veces encuentro en lo personal una forma de hablar
+            de lo colectivo. Por eso, mis proyectos suelen partir de preguntas
+            internas o de temas que me atraviesan, con la intención de abrir un
+            diálogo con quien los vea. Este portfolio es una recopilación de
+            algunos de esos procesos: pruebas, errores, búsquedas y hallazgos
+            que definen no solo lo que hago, sino también cómo veo y habito el
+            diseño.
           </p>
         </div>
       </section>
@@ -63,39 +78,34 @@
 
       <section id="trabajos">
         <div class="galeria">
-          <!-- Trabajo 1 (con link) -->
           <a href="autentica.html" class="polaroid">
             <img src="assets/images/trabajo1.jpg" alt="Trabajo 1" />
             <p><strong>AUTENTICA</strong></p>
           </a>
 
-          <!-- Trabajo 2 -->
-          <a href="trabajo2.html" class="polaroid">
+          <a href="documental.html" class="polaroid">
             <img src="assets/images/trabajo2.jpg" alt="Trabajo 2" />
+            <p><strong>DOCUMENTAL</strong></p>
+          </a>
+
+          <a href="trankii.html" class="polaroid">
+            <img src="assets/images/trabajo3.jpg" alt="Trabajo 3" />
+            <p><strong>TRANKII</strong></p>
+          </a>
+
+          <a href="FANZINE.html" class="polaroid">
+            <img src="assets/images/trabajo4.jpg" alt="Trabajo 4" />
             <p><strong>FANZINE</strong></p>
           </a>
 
-          <!-- Trabajo 3 -->
-          <a href="trabajo3.html" class="polaroid">
-            <img src="assets/images/trabajo3.jpg" alt="Trabajo 3" />
-            <p><strong>MENOS ES NADA</strong></p>
-          </a>
-          <!-- Trabajo 4 -->
-          <a href="trabajo4.html" class="polaroid">
-            <img src="assets/images/trabajo4.jpg" alt="Trabajo 4" />
-            <p><strong>MENOS ES NADA</strong></p>
-          </a>
-
-          <!-- Trabajo 5 -->
           <a href="trabajo5.html" class="polaroid">
             <img src="assets/images/trabajo5.jpg" alt="Trabajo 5" />
             <p><strong>MENOS ES NADA</strong></p>
           </a>
 
-          <!-- Trabajo 6 -->
-          <a href="trabajo6.html" class="polaroid">
+          <a href="404.html" class="polaroid">
             <img src="assets/images/trabajo6.jpg" alt="Trabajo 6" />
-            <p><strong>MENOS ES NADA</strong></p>
+            <p><strong>EL LANZADO</strong></p>
           </a>
         </div>
       </section>
@@ -103,34 +113,18 @@
       <div class="contacto-lateral" id="contactoLateral">CONTACTO</div>
       <section id="contacto">
         <h2>Contacto</h2>
-        <form>
-          <input type="text" placeholder="Nombre" required />
-          <input type="email" placeholder="Correo electrónico" required />
-          <textarea rows="4" placeholder="Mensaje" required></textarea>
+        <form class="formulario-contacto">
+          <div class="input-row">
+            <input type="text" placeholder="Nombre" required />
+            <input type="email" placeholder="Correo electrónico" required />
+          </div>
+          <textarea placeholder="Mensaje" rows="5" required></textarea>
           <button type="submit">Enviar</button>
         </form>
       </section>
     </main>
 
-    <footer>
-      <p>
-        Portfolio mik © 2025 by Micaela Noriega is licensed under CC BY-NC-ND
-        4.0
-      </p>
-    </footer>
-
     <script>
-      // ——— EXPANSIÓN DE TRABAJO (polaroid) ———
-      const trabajos = {
-        trabajo1: {
-          img: "assets/images/trabajo1.jpg",
-          titulo: "AUTENTICA",
-          texto:
-            "Descripción detallada del proyecto Autentica. Puedes escribir aquí lo que hiciste, herramientas, concepto, etc.",
-        },
-        // Puedes agregar más como trabajo2, trabajo3, etc.
-      };
-
       function expandirTrabajo(id) {
         const data = trabajos[id];
         if (!data) return;
@@ -150,8 +144,6 @@
         document.body.style.overflow = "";
       }
 
-      // ——— MENÚ CENTRAL DESLIZABLE ———
-
       const botonMenu = document.getElementById("botonMenu");
       const menuCentral = document.getElementById("menuCentral");
 
@@ -160,7 +152,7 @@
       }
 
       botonMenu.addEventListener("click", (e) => {
-        e.stopPropagation(); // evita que se cierre inmediatamente
+        e.stopPropagation();
         toggleMenu();
       });
 
@@ -174,7 +166,6 @@
         }
       });
 
-      // Cierra el menú cuando se hace clic en cualquier enlace del menú
       menuCentral.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
           menuCentral.classList.remove("activo");
@@ -215,5 +206,11 @@
         contactoLateral.classList.toggle("visible", inView);
       });
     </script>
+    <footer>
+      <p>
+        Portfolio mik © 2025 by Micaela Noriega is licensed under CC BY-NC-ND
+        4.0
+      </p>
+    </footer>
   </body>
 </html>
